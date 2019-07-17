@@ -1,0 +1,78 @@
+<div class="container">
+        <button type="button" class="btn btn-warning" routerLink="/"><i class="fas fa-home"></i>&nbsp;Home</button>
+        <div class="text-center">
+          <h1>Quản Lý Phim</h1><hr /><br />
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="row">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button class="btn btn-primary" (click)="addPhim()"><span class="fa fa-plus"></span>&nbsp;&nbsp;Thêm Phim</button>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button class="btn btn-primary" routerLink="/dashboard/qluser"><i class="fas fa-users"></i>&nbsp;&nbsp;USER</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+<div class="container">
+        <hr />
+        <table class="table table-bordered table-hover mt-15">
+          <thead>
+            <tr class="text-nowrap">
+              <th class="text-center">STT</th>
+              <th class="text-center">Tên</th>
+              <th class="text-center">Thể loại</th>
+              <th class="text-center">Hãng sản xuất</th>
+              <th class="text-center">Ngày chiếu</th>
+              <th class="text-center">Đạo diễn</th>
+              <th class="text-center">Diễn viên</th>
+              <th class="text-center">Nội dung</th>
+              <th class="text-center">Giá vé</th>
+              <th class="text-center">Trạng Thái</th>
+              <th class="text-center">Hành Động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr *ngIf="listPhim.length <= 0">Không có dữ liệu</tr>
+            <tr *ngFor="let item of listPhim; let i=index">
+              <td>{{ i+1 }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.theloai == 1 ? 'Tình cảm' : item.theloai == 2 ? 'Hài hước' : item.theloai == 3 ? 'Kinh dị' : 'Đời thường' }}</td>
+              <td>{{ item.hangsanxuat }}</td>
+              <td>{{ item.ngaychieu }}</td>
+              <td>{{ item.daodien }}</td>
+              <td>{{ item.dienvien }}</td>
+              <td class="text-wrap" [ngStyle]="{'overflow': 'hidden'}">{{ item.description }}</td>
+              <td>{{ item.price }}</td>
+              <td>{{ item.status ? 'Đang chiếu' : 'Sắp chiếu' }}</td>
+              <td>
+              	<button type="button" class="btn btn-success" (click)="editPhim(item.id)">Sửa</button>
+              	<button type="button" class="btn btn-success" (click)="deletePhim(item.id)">Xóa</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       </div>
+     </div>
+    </div>
+  </div>
+</div>

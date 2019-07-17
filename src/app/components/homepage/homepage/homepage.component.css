@@ -1,0 +1,133 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+
+.header {
+	width: 100%;
+	padding: 50px 0;
+	background-color: lightblue;
+	text-align: center;
+	line-height: 50px;
+}
+
+.navbar {
+	width: 100%;
+	background-color: black;
+	display: flex;
+}
+
+.navbar a {
+	text-decoration: none;
+	padding: 15px;
+}
+
+.navbar a:link {
+	color: white;
+}
+
+.navbar a:visit {
+	color: orange;
+}
+
+.navbar a:hover {
+	background-color: white;
+}
+
+.navbar a:active {
+	background-color: gray;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+	height: auto;
+}
+
+.side {
+	flex: 25%;
+	background-color: lightgray;
+}
+
+.side .about-me {
+	padding: 20px 20px 0 20px;
+	line-height: 40px;
+}
+
+.fake-img {
+	background-color: gray;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.fake-img img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-size: cover;
+	/*bottom: 100%;
+	transition: all 0.5s ease 0s; */
+	/* property duration timming-function delay*/
+}
+
+.fake-img:hover {
+	transform: scale(1.01);
+	box-shadow: 0 0 5px 2px black;
+}
+
+.fake-img:hover img {
+	bottom: 0%;
+	height: 100%;
+}
+
+.side .more-text {
+	padding: 20px 20px 0 20px;
+	line-height: 40px;
+}
+
+.side .more-text .fake-img {
+	margin-top: 20px;
+}
+
+.main {
+	flex: 75%;
+	display: grid;
+  	grid-template-columns: auto auto auto auto;
+  	justify-content: space-evenly;
+}
+
+.title-heading {
+	padding: 20px;
+	line-height: 40px;
+	background-color: lightblue;
+	margin: 5px;
+	width: 220px;
+	word-wrap: break-word;
+	font-size: auto;
+}
+
+.title-heading:hover {
+	box-shadow: 0 0 5px 5px orange;
+}
+
+.footer {
+	height: 100px;
+	background-color: gray;
+	text-align: center;
+}
+
+.footer h2 {
+	line-height: 100px;
+}
+
+@media screen and (max-width: 700px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.side .main {
+		flex: 100%;
+	}
+}

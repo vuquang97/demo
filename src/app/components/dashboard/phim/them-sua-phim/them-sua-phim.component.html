@@ -1,0 +1,85 @@
+<div class="panel panel-danger tieu-de-form-them container">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                       {{ idPhim ? 'Sửa Phim' : 'Thêm phim' }}
+                    </h3>
+                </div>
+                <div class="panel-body form-them">
+                    <form novalidate [formGroup]="detailPhimForm">
+                        <div class="form-group">
+                            <label>Tên: </label>
+                            <input type="text" name="name" formControlName="name" class="form-control"/>
+                            <div class="text-danger" *ngIf="detailPhimForm.controls?.name.hasError('required') && detailPhimForm.controls?.name.touched">Không được bỏ trống trường này</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Link ảnh: </label>
+                           <label class="image-upload-container btn btn-bwm">
+                              <input #imageInput
+                                     type="file"
+                                     accept="image/*"
+                                     (change)="processFile(imageInput)" />
+                            </label>
+                             <label *ngIf="selectedFile" class="text-success">upload success</label>
+                              <div *ngIf="detailPhimForm.controls['image'].value"
+       [ngStyle]="{'background-image': 'url('+ detailPhimForm.controls['image'].value + ')', 'width' : '200px', 'height' : '200px', 'background-size': 'cover'}">
+  </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Thể loại: </label>
+                           <!-- <input type="text" name="theloai"  class="form-control" /> -->
+                                <select value="Thể loại" class="btn btn-primary" formControlName="theLoai">
+                                    <option value="1">Tình cảm</option>
+                                    <option value="2">Đời thường</option>
+                                    <option value="3">Hài hước</option>
+                                    <option value="4">Hành động</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Hãng sản xuất: </label>
+                            <input type="text" name="hangsanxuat" formControlName="hangSanXuat" class="form-control" />
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3 col-lg-3">
+                                <label>Ngày chiếu: </label>
+                                <input type="date" name="ngaychieu" formControlName="ngayChieu" class="form-control"/>
+                                <div class="text-danger" *ngIf="detailPhimForm.controls?.ngayChieu.hasError('required') && detailPhimForm.controls?.ngayChieu.touched">Không được bỏ trống trường này</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Đạo diễn: </label>
+                            <input type="text" name="daodien" formControlName="daoDien" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Diễn viên: </label>
+                            <input type="text" name="dienvien" formControlName="dienVien" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung: </label>
+                            <textarea formControlName="description" class="form-control"></textarea>
+                            <div class="text-danger" *ngIf="detailPhimForm.controls?.description.hasError('required') && detailPhimForm.controls?.description.touched">Không được bỏ trống trường này</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Giá vé: </label>
+                            <input type="number" name="price" formControlName="price" class="form-control"/>
+                            <div class="text-danger" *ngIf="detailPhimForm.controls?.price.value < 0">Giá vé không được thấp hơn 0</div>
+                            <div class="text-danger" *ngIf="detailPhimForm.controls?.price.hasError('required') && detailPhimForm.controls?.price.touched">Không được bỏ trống trường này</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Đánh giá: </label>
+                            <input type="text" name="rating" formControlName="rating" class="form-control"/>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>Trạng Thái: </label>
+                            <select class="form-control" name="status">
+                                <option value="0">Kích hoạt</option>
+                                <option value="1">Ẩn</option>
+                            </select>
+                        </div> -->
+                        <div class="text-center">
+                            <button *ngIf="!idPhim" class="btn btn-warning" type="button" (click)="addPhim(detailPhimForm.value)" [disabled]="detailPhimForm.invalid || detailPhimForm.controls?.price.value < 0">Thêm</button>&nbsp;&nbsp;
+                            <button *ngIf="idPhim" class="btn btn-warning" type="button" (click)="updatePhim(detailPhimForm.value)" [disabled]="detailPhimForm.invalid || detailPhimForm.controls?.price.value < 0">Sửa</button>&nbsp;&nbsp;
+                            <button class="btn btn-danger" type="button" (click)="goBack()">Hủy bỏ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>

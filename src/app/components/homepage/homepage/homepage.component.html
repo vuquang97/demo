@@ -1,0 +1,50 @@
+<div class="header">
+			<h1>My website</h1>
+			<p>layout flexible</p>
+		</div>
+		<div class="navbar">
+			<a routerLink="/dashboard">Dashboard</a>
+			<!-- <a href="#link2">link2</a>
+			<a href="#link2">link3</a>
+			<a href="#link3">link4</a> -->
+		</div>
+		<div class="container">
+			<div class="side">
+				<div class="about-me">
+					<h2>About Me</h2>
+					<p>Photo of me:</p>
+					<div class="fake-img" style="height: 200px;">
+						<!-- <img src="remht.png" alt="ảnh rem" /> -->
+					</div>
+					<p>Some text about me in culpa qui offica deserunt mollit anim...</p>
+				</div>
+				<div class="more-text">
+					<h2>More Text</h2>
+					<p>Lorem ipsum dolor sit ame.</p>
+					<div class="fake-img" style="height: 60px;">
+						<!-- <img src="remht.png" alt="ảnh rem" /> -->
+					</div>
+					<div class="fake-img" style="height: 60px;">
+						<!-- <img src="remht.png" alt="ảnh rem" /> -->
+					</div>
+					<div class="fake-img" style="height: 60px;">
+						<!-- <img src="remht.png" alt="ảnh rem" /> -->
+					</div>
+				</div>
+			</div>
+			<div class="main">
+				<div class="title-heading" *ngFor="let item of listPhim" (click)="detailPhim(item)">
+					<h4>{{ item.name }}</h4>
+					<p>Title, {{ item.ngayChieu }}</p>
+					<div class="fake-img" style="height: 200px;">
+						<img [src]="item.image" alt="ảnh rem" />
+					</div>
+					<div [ngStyle]="{ 'text-align' : 'center' }">
+						<p>{{ item.price }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<h2>FOOTER</h2>
+		</div>

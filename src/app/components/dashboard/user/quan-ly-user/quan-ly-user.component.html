@@ -1,0 +1,66 @@
+<div class="container">
+        <button type="button" class="btn btn-warning" routerLink="/"><i class="fas fa-home"></i>&nbsp;Home</button>
+        <div class="text-center">
+          <h1>Quản Lý User</h1><hr /><br />
+        </div>
+        <div class="row">
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="row">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button class="btn btn-primary" (click)="addUser()"><span class="fa fa-plus"></span>&nbsp;&nbsp;Thêm User</button>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button class="btn btn-primary"><i class="fas fa-users"></i>&nbsp;&nbsp;QL Phim</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+<div class="container">
+        <hr />
+        <table class="table table-bordered table-hover mt-15">
+          <thead>
+            <tr class="text-nowrap">
+              <th class="text-center">STT</th>
+              <th class="text-center">Tên</th>
+              <th class="text-center">Địa chỉ</th>
+              <th class="text-center">Điện thoại</th>
+              <th class="text-center">Tên đăng nhập</th>
+              <th class="text-center">Mật khẩu</th>
+              <th class="text-center">Chức năng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr *ngIf="listUser.length <= 0">Không có dữ liệu</tr>
+            <tr *ngFor="let item of listUser; let i=index">
+              <td>{{ i+1 }}</td>
+              <td>{{ item.txtHoTen }}</td>
+              <td>{{ item.txtDiaChi }}</td>
+              <td>{{ item.txtPhone }}</td>
+              <td>{{ item.txtUsername }}</td>
+              <td>{{ item.txtPassword }}</td>
+              <td>
+              	<button type="button" class="btn btn-success" (click)="editUser(item.id)">Sửa</button>
+              	<button type="button" class="btn btn-success" (click)="deleteUser(item.id)">Xóa</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+       </div>
+     </div>
+    </div>
+  </div>
+</div>

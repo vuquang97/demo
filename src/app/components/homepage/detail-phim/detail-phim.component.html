@@ -1,0 +1,43 @@
+<div class="header">
+			<h1>Thông tin phim</h1>
+			<p>layout flexible</p>
+		</div>
+		<div class="navbar">
+			<a (click)="back()">Quay lại</a>
+		<!-- 	<a href="#link2">link2</a>
+			<a href="#link2">link3</a>
+			<a href="#link3">link4</a> -->
+		</div>
+		<div class="container">
+			<div class="side">
+				<div class="about-me">
+					<!-- <h2>About Me</h2> -->
+					<p>Photo of me:</p>
+					<div class="fake-img" style="height: 200px;">
+						<img [src]="phim.image" alt="ảnh rem" />
+					</div>
+					<p>Some text about me in culpa qui offica deserunt mollit anim...</p>
+				</div>
+			</div>
+			<div class="main">
+				<div class="title-heading">
+					<h1>{{ phim.name }}</h1>
+					<p>Title description, {{ phim.ngayChieu }}</p>
+					<h3>Nội dung</h3>
+					<p>{{ phim.description }}</p>
+				</div>
+				<!-- <div class="title-heading">
+					<h1>TITLE HEADING</h1>
+					<p>Title description, Dec 7, 2017</p>
+					<div class="fake-img" style="height: 200px;">
+						<img src="remht.png" alt="ảnh rem" />
+					</div>
+					<p>Some text..</p>
+					<p>
+					Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+				</div> -->
+			</div>
+		</div>
+		<div class="footer">
+			<h2>FOOTER</h2>
+		</div>
